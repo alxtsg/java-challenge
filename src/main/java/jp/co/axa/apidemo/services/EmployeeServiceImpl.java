@@ -1,12 +1,13 @@
 package jp.co.axa.apidemo.services;
 
-import jp.co.axa.apidemo.entities.Employee;
-import jp.co.axa.apidemo.repositories.EmployeeRepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import jp.co.axa.apidemo.entities.Employee;
+import jp.co.axa.apidemo.repositories.EmployeeRepository;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -23,9 +24,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     return employees;
   }
 
-  public Employee getEmployee(Long employeeId) {
-    Optional<Employee> optEmp = employeeRepository.findById(employeeId);
-    return optEmp.get();
+  public Optional<Employee> getEmployee(Long employeeId) {
+    return employeeRepository.findById(employeeId);
   }
 
   public void saveEmployee(Employee employee) {
