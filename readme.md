@@ -65,6 +65,12 @@ Due to time constraint, some changes were not completed:
       application.
     - The username can be the employee name. A new field can be added to the
       database to store the hashed password (e.g. hashed by PBKDF2).
+  - Add authorization.
+    - An employee should be able to see his/ her full employee record. An
+      employee should not be able to see the salary of another employee.
+    - A role table can be added to specify the role of each employee. For
+      example, an employee with manager role can the full employee record of
+      his/ her own department, while an employee with staff role cannot.
   - Add automated testing to test the controller, service, and repository
     classes.
 - In the Swagger UI:
